@@ -1,5 +1,5 @@
 # Use the official Nginx image as a base
-FROM nginx:latest
+FROM nginx:1.25
 
 # Copy your website files to the Nginx HTML directory
 COPY index.html /usr/share/nginx/html/index.html

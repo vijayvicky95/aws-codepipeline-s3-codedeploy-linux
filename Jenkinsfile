@@ -39,6 +39,11 @@ pipeline {
     //             }
     //         }
     //     }
+        stage('Checkout Code') {
+            steps {
+                git 'https://github.com/Anilmidna/aws-codepipeline-s3-codedeploy-linux.git'
+            }
+        }
 
         stage('Docker Build And Push') {
             steps {
