@@ -1,8 +1,12 @@
 # Use the official Nginx image as a base
 FROM nginx:1.25
 
-# Copy your website files to the Nginx HTML directory
-COPY index.html /usr/share/nginx/html/index.html
+# Create a non-root user and switch to it
+RUN addgroup --system nginx && adduser --system --ingroup nginx nginx
+USER nginx
+
+# Copy your custom configuration or HTML files if needed
+COPY --chown=nginx:nginx index.html /usr/share/nginx/html/
 
 # Expose port 80
 EXPOSE 80
