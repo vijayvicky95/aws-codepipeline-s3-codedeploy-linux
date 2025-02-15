@@ -28,41 +28,36 @@ pipeline {
        
         
       
-    //    stage('Docker Build And Push') {
-    //         steps {
-    //             script {
-    //                 docker.withRegistry('', 'docker-cred') {
-    //                     def buildNumber = env.BUILD_NUMBER ?: '1'
-    //                     def image = docker.build("anilmidna/a10001:latest")
-    //                     image.push()
-    //                 }
-    //             }
-    //         }
-    //     }
-        stage('Checkout Code') {
-            steps {
-                git 'https://github.com/Anilmidna/aws-codepipeline-s3-codedeploy-linux.git'
-            }
-        }
-
-        stage('Docker Build And Push') {
+       stage('Docker Build And Push') {
             steps {
                 script {
-                    docker.withRegistry('https://hub.docker.com', 'docker-cred') {
+                    docker.withRegistry('', 'docker-cred') {
                         def buildNumber = env.BUILD_NUMBER ?: '1'
-                        def imageName = "anilmidna/a10001:${buildNumber}"
-                        def latestImage = "anilmidna/a10001:latest"
-
-                        // Build Docker image
-                        sh "docker build -t ${imageName} -t ${latestImage} ."
-
-                        // Push both versioned and latest tag
-                        sh "docker push ${imageName}"
-                        sh "docker push ${latestImage}"
+                        def image = docker.build("anilmidna/a10001:latest")
+                        image.push()
                     }
                 }
             }
         }
+
+        // stage('Docker Build And Push') {
+        //     steps {
+        //         script {
+        //             docker.withRegistry('https://hub.docker.com', 'docker-cred') {
+        //                 def buildNumber = env.BUILD_NUMBER ?: '1'
+        //                 def imageName = "anilmidna/a10001:${buildNumber}"
+        //                 def latestImage = "anilmidna/a10001:latest"
+
+        //                 // Build Docker image
+        //                 sh "docker build -t ${imageName} -t ${latestImage} ."
+
+        //                 // Push both versioned and latest tag
+        //                 sh "docker push ${imageName}"
+        //                 sh "docker push ${latestImage}"
+        //             }
+        //         }
+        //     }
+        // }
 
     
        
