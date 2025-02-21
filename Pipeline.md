@@ -187,10 +187,7 @@ Take the IP Address of Dockers EC2 and paste in a browser to see the contents of
 ------------------------------------------------------------------------------
 ADDITIONAL INFORMATION:
 
-1) Just for testing and verification purpose : 
-**Testing docker hub connetion on Docker installation on Jenkins**
-
-2) Important : Ensure you have below content in Dockerfile located in your github. 
+Important : Ensure you have below content in Dockerfile located in your github. 
 Nginx build is based on Dockerfile in the Github repository :-
 --------------
 # Use the official Nginx image as a base
