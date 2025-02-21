@@ -178,7 +178,13 @@ ssh -o StrictHostKeyChecking=no ubuntu@DOCKEREC2IP "
 "
 click Save
 
-*Important* : Under configure - select SSH and enter the pem file key details. 
+*Important - Add SSH Keys pem file* : 
+Select your pipeline - Environment, Click and check SSH agent (Important) 
+Create a credentials with “SSH username with private key”
+ID, Description could be anything for your reference. 
+Username -  Ubuntu ( Instance username we are logging in.)
+Private key - enter directly - add. Paste the private key of the docker instance (contents of your pem file). 
+Save
 
 **Run the Jenkins pipeline**
 
