@@ -73,7 +73,7 @@ Security key token Example - sqa_0bd83a93e687e1cd1cfc1025e48fe51dff9d1b12  (LONG
 
 **Settings On Jenkins website**
 
-Manage Jenkins -  Plugins - Install 4 plugins - Sonarqube scanner, SSH2easy, SSHServer, Docker, CloudBees Docker Build and Publish & SSH Agent
+Manage Jenkins -  Plugins - Install 5 plugins - Sonarqube scanner, SSH2easy, SSHServer, Docker, CloudBees Docker Build and Publish & SSH Agent
 Under Manage jenkins - Tools (Global tool config) - SonarQube Scanner installations
 Add sonarqube scanner - Just give a name and save
 Under System configure tools - Sonarcube servers -Added sonarcube
