@@ -133,13 +133,25 @@ sudo service docker restart
 
 **Integration Dockers to Jenkins**
 
-Install docker in Jenkins EC2 also - (using this to build images) - Follow same steps as above. 
+Install docker in Jenkins EC2 instance also - (using this to build images) - Follow same steps as above. 
 
-Then run these 3 commands - important - 
+Testing dockers is working fine:
+sudo docker run hello-world  
+sudo docker ps
+sudo docker --version
 
+Then run these 3 commands - important: 
 sudo usermod -aG docker ubuntu 
 sudo usermod -aG docker $USER 
 sudo usermod -aG docker jenkins
+
+Restart Dockers and Jenkins after this :
+sudo systemctl restart docker
+sudo systemctl status docker
+sudo systemctl restart jenkins
+
+Check if Jenkins user on Jenkins EC2 can connect to hub:
+sudo -u jenkins docker login -u <hub user ID>
 
 **Setup on Jenkins website**
 
